@@ -10,11 +10,6 @@ protocol FruitsAndBerriesDisplayLogic: AnyObject {
 }
 
 class FruitsAndBerriesViewController: UIViewController {
-    struct Configuration {
-    
-    }
-    
-    var configuration: Configuration!
     var interactor: FruitsAndBerriesBusinessLogic?
     var router: FruitsAndBerriesRoutingLogic?
     
@@ -26,7 +21,7 @@ class FruitsAndBerriesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        interactor?.load(request: .init(configuration: configuration))
+        interactor?.load(request: .init())
         
         setupUI()
     }

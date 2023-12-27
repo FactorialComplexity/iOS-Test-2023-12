@@ -3,12 +3,10 @@
 //  iOS-Test
 //
 
+// Implemented by Interactor
 protocol FruitsAndBerriesBusinessLogic {
+    // Loads the list of the items and passes Load.Response to Presenter
     func load(request: FruitsAndBerriesModels.Load.Request)
-}
-
-protocol FruitsAndBerriesDataProvider: AnyObject {
-    
 }
 
 class FruitsAndBerriesInteractor {
@@ -19,8 +17,4 @@ extension FruitsAndBerriesInteractor: FruitsAndBerriesBusinessLogic {
     func load(request: FruitsAndBerriesModels.Load.Request) {
         presenter?.present(response: .init())
     }
-}
-
-extension FruitsAndBerriesInteractor: FruitsAndBerriesDataProvider {
-    
 }

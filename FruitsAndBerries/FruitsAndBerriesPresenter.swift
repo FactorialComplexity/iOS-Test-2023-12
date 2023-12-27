@@ -3,6 +3,7 @@
 //  iOS-Test
 //
 
+// Implemented by View layer (ViewControllers)
 protocol FruitsAndBerriesPresentationLogic {
     func present(response: FruitsAndBerriesModels.Load.Response)
 }
@@ -12,6 +13,7 @@ class FruitsAndBerriesPresenter {
 }
 
 extension FruitsAndBerriesPresenter: FruitsAndBerriesPresentationLogic {
+    // Transforms Load.Response into ViewModel to be displayed by the ViewController
     func present(response: FruitsAndBerriesModels.Load.Response) {
         view?.display(model: .init())
     }
